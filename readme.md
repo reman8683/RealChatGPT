@@ -1,7 +1,6 @@
 ---
 
 # ChatGPT in Minecraft!
-###
 
 ---
 
