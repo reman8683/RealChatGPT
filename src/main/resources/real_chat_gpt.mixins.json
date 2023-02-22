@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.reman8683.real_chat_gpt.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "GPTmixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
