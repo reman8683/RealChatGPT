@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class OpenAiTextCompletion {
-    public static final String API_KEY = "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";
+    public static final String API_KEY = "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";
     public static String PROMPT;
     public static String AI;
     public static List STOP;

@@ -37,7 +37,7 @@ public class Real_chat_gptClient implements ClientModInitializer {
                     GPT_OPTIONS = gson.fromJson(reader, JsonObject.class);
                     OpenAiTextCompletion.PROMPT = GPT_OPTIONS.get("prompt").getAsString();
                     OpenAiTextCompletion.STOP = gson.fromJson(GPT_OPTIONS.get("stop"), List.class);
-                    OpenAiTextCompletion.AI = OpenAiTextCompletion.PROMPT;
+                    System.out.println(GPT_OPTIONS);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

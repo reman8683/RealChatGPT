@@ -27,11 +27,13 @@ public abstract class GPTmixin extends Screen {
 
     @Inject(at = @At("RETURN"), method = "init()V")
     private void injected(CallbackInfo ci) {
+        OpenAiTextCompletion.AI = OpenAiTextCompletion.PROMPT;
         this.stopSleepingButton = ButtonWidget.builder(Text.of("ChatGPT"), (button) -> {
             String text = this.chatField.getText();
             new Thread(()->{
                 try {
                     this.stopSleepingButton.setMessage(Text.of("Waiting..."));
+                    System.out.println(OpenAiTextCompletion.AI);
                     String aiTmp = OpenAiTextCompletion.OpenAiTextCompletion(OpenAiTextCompletion.AI + text + String.format("\n%s ", OpenAiTextCompletion.STOP.get(1)));
                     this.setText(aiTmp.replaceAll("(\r\n|\r|\n|\n\r)", ""));
                     OpenAiTextCompletion.AI += String.format("%s\n%s %s\n%s ", text, OpenAiTextCompletion.STOP.get(1), aiTmp, OpenAiTextCompletion.STOP.get(0));
